@@ -1,44 +1,34 @@
 package se.tommy.DiceGame;
 
 public class Player {
-private String namePlayer1;
-private String namePlayer2;
-private int scorePlayer1;
-private int scorePlayer2;
+    //ATTRIBUT
+    private String namePlayer;
+    private int scorePlayer;
 
-
-    public String getNamePlayer1() {
-        return namePlayer1;
+    //KONSTRUKTOR FÖR NAMEPLAYER
+    public Player(String name) {
+        this.namePlayer = name;
     }
 
-    public String getNamePlayer2() {
-        return namePlayer2;
+    //GETTER-bää
+    public String getNamePlayer() {
+        return namePlayer;
     }
 
-    public void setNamePlayer1(String namePlayer1) {
-        this.namePlayer1 = namePlayer1;
+    public int getScorePlayer() {
+        return scorePlayer;
     }
 
-    public void setNamePlayer2(String namePlayer2) {
-        this.namePlayer2 = namePlayer2;
+    //SETTER FÖR SCORE
+    public void setScorePlayer(int scorePlayer) {
+        this.scorePlayer = scorePlayer;
     }
 
-    public int getScorePlayer1() {
-        return scorePlayer1;
+    //METOD FÖR ATT BERÄKNA SUMMAN AV TÄRNINGSKASTEN
+    public int diceSum(int roll1, int roll2) {
+        int sum = roll1 + roll2;
+        return sum;
     }
-
-    public void setScorePlayer1(int scorePlayer1) {
-        this.scorePlayer1 = scorePlayer1;
-    }
-    public int getScorePlayer2() {
-        return scorePlayer2;
-    }
-
-    public void setScorePlayer2(int scorePlayer2) {
-        this.scorePlayer2 = scorePlayer2;
-    }
-
-
 }
 
 
