@@ -1,13 +1,11 @@
 package se.tommy.DiceGame;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
+        Methods methods = new Methods();
         //INTRODUKTION TILL SPELET
         System.out.println("--------Välkommen till Dicegame!!--------");
         System.out.println("Ange namn för spelare 1");
@@ -22,29 +20,9 @@ public class Main {
         while (continueGame) {
 
             //SPELARE 1 BÖRJAR
-            System.out.println("\n" + player1.getNamePlayer() + " börjar spelet, tryck enter för att kasta tärningen");
-            scanner.nextLine();
-            int roll1 = random.nextInt(6) + 1;
-            System.out.println(player1.getNamePlayer() + " kastade: " + roll1);
-            System.out.println("Tryck enter igen för att kasta tärningen");
-            scanner.nextLine();
-            int roll2 = random.nextInt(6) + 1;
-            System.out.println(player1.getNamePlayer() + " kastade: " + roll2);
-            player1.setScorePlayer(player1.diceSum(roll1, roll2));
-            System.out.println("*****" + player1.getNamePlayer() + " fick " + player1.getScorePlayer() + " poäng*****");
-
+            methods.playerTurn(player1);
             //SPELARE 2 BÖRJAR
-            System.out.println("\nNu är det " + player2.getNamePlayer() + "s tur, tryck enter för att kasta tärningen");
-            scanner.nextLine();
-            int roll3 = random.nextInt(6) + 1;
-            System.out.println(player2.getNamePlayer() + " kastade: " + roll3);
-            System.out.println("Tryck enter igen för att kasta tärningen");
-            scanner.nextLine();
-            int roll4 = random.nextInt(6) + 1;
-            System.out.println(player2.getNamePlayer() + " kastade: " + roll4);
-            player2.setScorePlayer(player2.diceSum(roll3, roll4));
-            System.out.println("\n" + "*****" + player2.getNamePlayer() + " fick " + player2.getScorePlayer() + " poäng*****");
-            System.out.println("*****" + player1.getNamePlayer() + " fick " + player1.getScorePlayer() + " poäng*****");
+            methods.playerTurn(player2);
 
             //IF SATS FÖR ATT SE VEM VINNAREN ÄR
             if (player1.getScorePlayer() > player2.getScorePlayer()) {

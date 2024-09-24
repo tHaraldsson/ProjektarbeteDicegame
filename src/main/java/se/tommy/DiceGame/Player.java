@@ -24,11 +24,7 @@ public class Player {
         this.scorePlayer = scorePlayer;
     }
 
-    //METOD FÖR ATT BERÄKNA SUMMAN AV TÄRNINGSKASTEN
-    public int diceSum(int roll1, int roll2) {
-        int sum = roll1 + roll2;
-        return sum;
-    }
+
 }
 
 
