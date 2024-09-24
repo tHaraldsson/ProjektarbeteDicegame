@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Methods methods = new Methods();
+
         //INTRODUKTION TILL SPELET
         System.out.println("--------Välkommen till Dicegame!!--------");
         System.out.println("Ange namn för spelare 1");
@@ -35,8 +36,9 @@ public class Main {
             //WHILE LOOP IFALL MAN FÅR ETT OGILTIGT SVAR FRÅN FRÅGAN "VILL DU FORTSÄTTA"
             boolean continueAsking = true;
             while (continueAsking) {
+
                 //VILL DU FORTSÄTTA SPELA FRÅGA MED IF SATS
-                System.out.println("\nvill du fortsätta spela? Y/N");
+                System.out.println("\nvill du fortsätta spela? Y/N eller se highscore? HS");
                 String answer = scanner.nextLine();
 
                 if (answer.equalsIgnoreCase("y")) {
@@ -46,6 +48,8 @@ public class Main {
                     continueGame = false;
                     continueAsking = false;
                     System.out.println("Game Over!!!");
+                } else if (answer.equalsIgnoreCase("hs")) {
+                    methods.showHighScore(player1, player2);
                 } else {
                     System.out.println("Ogiltig inmatning, försök igen.");
                     continueAsking = true;
