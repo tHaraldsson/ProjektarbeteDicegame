@@ -30,7 +30,7 @@ public class Methods {
     }
 
     public void showHighScore(Player player1, Player player2) {
-        System.out.println("\n*****HIGHSCORE EFTER DENNA RUNDA*****");
+        System.out.println("\n*****HIGHSCORE*****");
         System.out.println(player1.getNamePlayer() + " : " + player1.getTotalScore());
         System.out.println(player2.getNamePlayer() + " : " + player2.getTotalScore());
 
